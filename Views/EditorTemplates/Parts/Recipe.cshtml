@@ -1,0 +1,18 @@
+﻿@model MainBit.Recipes.ViewModels.RecipePartViewModel
+@{
+    Style.Include("~/modules/orchard.templates/scripts/codemirror/lib/codemirror.css");
+    Style.Include("~/modules/orchard.templates/styles/template-editor.css");
+    Script.Require("jQuery");
+    Script.Include("~/modules/orchard.templates/scripts/codemirror/lib/codemirror.js");
+    Script.Include("~/modules/orchard.templates/scripts/codemirror/mode/xml/xml.js");
+    Script.Include("~/modules/orchard.templates/scripts/codemirror/mode/javascript/javascript.js");
+    Script.Include("~/modules/orchard.templates/styles/codemirror/mode/css/css.js");
+    Script.Include("~/modules/orchard.templates/scripts/codemirror/mode/htmlmixed/htmlmixed.js");
+    Script.Include("~/modules/orchard.templates/scripts/codemirror/mode/htmlembedded/htmlembedded.js");
+    Script.Include("~/modules/orchard.templates/scripts/template-editor.js");
+}
+<fieldset>
+    <div>
+        @Html.TextAreaFor(m => m.RecipeText, new { @class = "text large code-editor" })
+    </div>
+</fieldset>

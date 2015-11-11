@@ -1,0 +1,7 @@
+﻿<Placement>
+  <Place Parts_Recipe_Edit="Content:0" />
+  <Match DisplayType="SummaryAdmin">
+    <Place Parts_Recipe_Execute_SummaryAdmin="Actions:7"
+           />
+  </Match>
+</Placement>

@@ -1,0 +1,43 @@
+﻿@using Orchard.Utility.Extensions
+@model Orchard.Modules.ViewModels.RecipesViewModel
+
+@{
+    Layout.Title = T("Recipes");
+}
+@using (Html.BeginFormAntiForgeryPost()) {
+    if (Model.Modules.Any()) {
+        <ul class="contentItems">
+            @foreach (var moduleEntry in Model.Modules.OrderBy(m => m.Module.Descriptor.Name)) {
+                var module = moduleEntry.Module;
+                var descriptor = module.Descriptor;
+
+                <li>
+                    <div class="summary">
+                        <div class="properties">
+                            <h2>@descriptor.Name<span> - @T("Version: {0}", !string.IsNullOrEmpty(descriptor.Version) ? descriptor.Version : T("1.0").ToString())</span></h2>
+
+                            @*@if (!string.IsNullOrEmpty(descriptor.Description)) {
+                                <p>@descriptor.Description</p>
+                                }*@
+
+                            @foreach (var recipe in moduleEntry.Recipes) {
+                                <br />
+                                <div>
+                                    <h4>
+                                        <a href="@Url.Action("Item", "Admin", new { area = "MainBit.Recipes", moduleId = descriptor.Id, name = recipe.Name })">
+                                            @recipe.Name.CamelFriendly()
+                                        </a>
+                                    </h4>
+                                    <p>@(!string.IsNullOrEmpty(recipe.Description) ? recipe.Description : T("No description").ToString())</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else {
+        <p>@T("No modules available").ToString()</p>
+    }
+}

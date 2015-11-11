@@ -1,0 +1,36 @@
+﻿@model MainBit.Recipes.ViewModels.RecipeExecuteViewModel
+@using Orchard.Localization;
+@using Orchard.Modules.Extensions;
+@using Orchard.Modules.ViewModels;
+@using Orchard.Utility.Extensions;
+@using Orchard.Modules.Models;
+@using Orchard.Environment.Configuration
+@using Orchard.MultiTenancy.Extensions;
+
+@{
+    Layout.Title = T("{0} - Recipe", Model.Title).ToString();
+}
+
+@using (Html.BeginFormAntiForgeryPost())
+{
+    <ul class="contentItems bulk-items">
+        @foreach (var tenant in Model.TenantSettings)
+        {
+            if (tenant.State != TenantState.Running) { continue; }
+            <li class="tenant @tenant.State">
+                <div class="summary">
+                    <div class="properties">
+                        <input type="checkbox" value="@tenant.Name" name="tenantNames" />
+                        <h3>
+                            @tenant.Name
+                        </h3>
+                    </div>
+                    <div class="primary"></div>
+                </div>
+            </li>
+        }
+    </ul>
+    <fieldset>
+        <button class="primaryAction" type="submit">@T("Execute")</button>
+    </fieldset>
+}

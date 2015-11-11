@@ -1,0 +1,10 @@
+﻿@using Orchard.ContentManagement
+@using Orchard.Core.Contents
+@using Orchard.Utility.Extensions
+@{
+  ContentPart contentPart = Model.ContentPart;
+}
+@if (Authorizer.Authorize(Permissions.EditContent, contentPart)) {
+    <a href="@Url.Action("Execute", "Admin", new { Id = Model.ContentItem.Id, ReturnUrl = Request.ToUrlString(), Area = "MainBit.Recipes" })">@T("Execution")</a>
+    @T(" | ")
+}
