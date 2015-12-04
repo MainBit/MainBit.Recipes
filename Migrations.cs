@@ -11,6 +11,7 @@ namespace Orchard.Recipes {
                 .WithDescription("Turns a type into a recipe provider."));
 
             ContentDefinitionManager.AlterTypeDefinition("Recipe", type => type
+                .Listable()
                 .WithPart("CommonPart",
                     p => p
                         .WithSetting("OwnerEditorSettings.ShowOwnerEditor", "false")

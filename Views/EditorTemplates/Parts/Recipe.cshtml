@@ -12,6 +12,7 @@
     Script.Include("~/modules/orchard.templates/scripts/template-editor.js");
 }
 <fieldset>
+    @Html.LabelFor(m => m.RecipeText, T("Recipe text"))
     <div>
         @Html.TextAreaFor(m => m.RecipeText, new { @class = "text large code-editor" })
     </div>

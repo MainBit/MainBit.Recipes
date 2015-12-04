@@ -14,7 +14,7 @@
 <section class="audittrail-content-eventsummary">
     @if (contentItem != null) {
         var contentType = contentItem.ContentType;
-        @T("{0} of the {1} {2} was {3}.", Html.ActionLink(T("Version {0}", eventVersionNumber).Text, "Detail", "Content", new { area = "Orchard.AuditTrail", id = contentItemId, version = eventVersionNumber }, null), contentType.ToLower(), Html.ItemEditLink(title, contentItemId), eventPastTense)
+        @T("{0} of the {1} {2} was {3}.", Html.ActionLink(T("Version {0}", eventVersionNumber).Text, "Detail", "Content", new { area = "Orchard.AuditTrail", id = contentItemId, version = eventVersionNumber }, null), contentType.ToLower(), Html.ItemEditLink(title, contentItemId), eventPastTense)<br/>
     }
     else
     {

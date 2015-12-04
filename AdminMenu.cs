@@ -2,7 +2,7 @@
 using Orchard.Security;
 using Orchard.UI.Navigation;
 
-namespace Orchard.Modules {
+namespace MainBit.Recipes {
     public class AdminMenu : INavigationProvider {
         public Localizer T { get; set; }
 
@@ -12,10 +12,8 @@ namespace Orchard.Modules {
 
         public void GetNavigation(NavigationBuilder builder) {
             builder
-                .Add(T("Modules"), menu => menu
-                    .Add(T("MainBit Recipes"), "3", item => item.Action("List", "Admin", new { area = "MainBit.Recipes" }).Permission(StandardPermissions.SiteOwner).LocalNav())
-                    .Add(T("Database recipes"), "4", item => item.Action("List", "Admin", new { id = "Recipe", area = "Contents"}).Permission(StandardPermissions.SiteOwner).LocalNav())
-                    );
+                //.AddImageSet("templates")
+                .Add(T("Recipes"), "5.0", item => item.Action("List", "Admin", new { id = "Recipe", area = "Contents"}));
         }
     }
 }

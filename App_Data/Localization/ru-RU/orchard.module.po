@@ -1,0 +1,20 @@
+﻿#: "MainBit.Recipes.AdminMenu"
+msgctxt "MainBit.Recipes.AdminMenu"
+msgid "Recipes"
+msgstr "Рецепты"
+
+#: "~/Modules/MainBit.Recipes/Views/EditorTemplates/Parts/Recipe.cshtml"
+msgctxt "~/Modules/MainBit.Recipes/Views/EditorTemplates/Parts/Recipe.cshtml"
+msgid "Recipe text"
+msgstr "Текст рецепта"
+
+#: "~/Modules/MainBit.Recipes/Views/Parts.Recipe.Execute.SummaryAdmin.cshtml"
+msgctxt "~/Modules/MainBit.Recipes/Views/Parts.Recipe.Execute.SummaryAdmin.cshtml"
+msgid "Execution"
+msgstr "Выполнение"
+
+#: "~/Modules/MainBit.Recipes/Views/Admin/Execute.cshtml"
+msgctxt "~/Modules/MainBit.Recipes/Views/Admin/Execute.cshtml"
+msgid "Execute"
+msgstr "Выполнить"
+

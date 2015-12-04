@@ -8,7 +8,7 @@ Description: Description for the module
 Features:
     MainBit.Recipes:
         Description: Provide recipe content type and ability to executing it on list of tenants (doesn't relate to orchard recipes from modules).
-		Dependecies: Orchard.Recipes, MainBit.MultiTenancy
+		Dependencies: Orchard.Recipes, MainBit.MultiTenancy
     MainBit.Recipes.AuditTrail:
         Description: Add executed recipe event for recipe content type
-		Dependecies: MainBit.Recipes, Orchard.AuditTrail
+		Dependencies: MainBit.Recipes, Orchard.AuditTrail
