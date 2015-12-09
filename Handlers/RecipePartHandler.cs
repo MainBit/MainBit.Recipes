@@ -1,20 +1,9 @@
-using System;
-using System.Linq;
-using JetBrains.Annotations;
-using Orchard.ContentManagement.MetaData;
-using Orchard.Core.Common.Models;
-using Orchard.Data;
-using Orchard.Localization;
-using Orchard.ContentManagement;
 using Orchard.ContentManagement.Handlers;
-using Orchard.Security;
-using Orchard.Services;
 using Orchard.Recipes.Services;
 using MainBit.Recipes.Models;
 
 namespace MainBit.Recipes.Handlers
 {
-    [UsedImplicitly]
     public class RecipePartHandler : ContentHandler {
         private readonly IRecipeParser _recipeParser;
 
