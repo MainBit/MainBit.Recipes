@@ -3,7 +3,8 @@ using Orchard.ContentManagement.MetaData;
 using Orchard.Core.Contents.Extensions;
 using Orchard.Data.Migration;
 
-namespace Orchard.Recipes {
+namespace MainBit.Recipes
+{
     public class Migrations : DataMigrationImpl {
         public int Create() {
             ContentDefinitionManager.AlterPartDefinition("RecipePart", part => part
