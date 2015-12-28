@@ -13,7 +13,8 @@ namespace MainBit.Recipes {
         public void GetNavigation(NavigationBuilder builder) {
             builder
                 //.AddImageSet("templates")
-                .Add(T("Recipes"), "5.0", item => item.Action("List", "Admin", new { id = "Recipe", area = "Contents"}));
+                .Add(T("Recipes"), "5.0", item => item.Action("List", "Admin", new { id = "Recipe", area = "Contents"})
+                    .Permission(StandardPermissions.SiteOwner));
         }
     }
 }
